@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html class="no-js"><head>
+ 
+  <title>JS Mastermind</title>
+ 
+
+ 
+
+  <link rel="stylesheet" href="./JS Mastermind_files/main.css">
+  <style>
+    
+    .container
+      {
+            -webkit-transform  : perspective(800px) rotateX(30deg);
+            padding: 5px;
+            border-radius: 10px;
+            background-color: #bab37d;
+            backface-visibility: hidden;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border: black 2px ;
+            border-color: black;
+            border-left-color: black;
+            border-top-color: black;
+            border-bottom-color: black;
+            border-right-color: black;
+      } 
+    
+    </style>
+</head>
+<body class="">
+
+  
+  <div class="wrapper">
+    <header>
+      <h1>Mastermind</h1>
+      <button id="newGame" class="green">Restart</button>
+    </header>
+    <div class="container">
+      <div id="guesses">
+        <div class="code row">
+          <div class="secretSocket">?</div>
+          <div class="secretSocket">?</div>
+          <div class="secretSocket">?</div>
+          <div class="secretSocket">?</div>
+        </div>
+        <div class="guess"><div class="socket"></div><div class="socket"></div><div class="socket"></div><div class="socket"></div></div>
+        <div class="guess"><div class="socket"></div><div class="socket"></div><div class="socket"></div><div class="socket"></div></div>
+        <div class="guess"><div class="socket"></div><div class="socket"></div><div class="socket"></div><div class="socket"></div></div>
+        <div class="guess"><div class="socket"></div><div class="socket"></div><div class="socket"></div><div class="socket"></div></div>
+        <div class="guess"><div class="socket"></div><div class="socket"></div><div class="socket"></div><div class="socket"></div></div>
+        <div class="guess"><div class="socket"></div><div class="socket"></div><div class="socket"></div><div class="socket"></div></div>
+        <div class="guess"><div class="socket"></div><div class="socket"></div><div class="socket"></div><div class="socket"></div></div>
+        <div class="guess"><div class="socket"></div><div class="socket"></div><div class="socket"></div><div class="socket"></div></div>
+      </div>
+
+      <div id="hints">
+        <div class="hint">
+          <div class="row">
+            <div class="js-hint-socket socket"></div>
+            <div class="js-hint-socket socket"></div>
+          </div>
+          <div class="row">
+            <div class="js-hint-socket socket"></div>
+            <div class="js-hint-socket socket"></div>
+          </div>
+        </div>
+        <div class="hint">
+          <div class="row">
+            <div class="js-hint-socket socket"></div>
+            <div class="js-hint-socket socket"></div>
+          </div>
+          <div class="row">
+            <div class="js-hint-socket socket"></div>
+            <div class="js-hint-socket socket"></div>
+          </div>
+        </div>
+        <div class="hint">
+          <div class="row">
+            <div class="js-hint-socket socket"></div>
+            <div class="js-hint-socket socket"></div>
+          </div>
+          <div class="row">
+            <div class="js-hint-socket socket"></div>
+            <div class="js-hint-socket socket"></div>
+          </div>
+        </div>
+        <div class="hint">
+          <div class="row">
+            <div class="js-hint-socket socket"></div>
+            <div class="js-hint-socket socket"></div>
+          </div>
+          <div class="row">
+            <div class="js-hint-socket socket"></div>
+            <div class="js-hint-socket socket"></div>
+          </div>
+        </div>
+        <div class="hint">
+          <div class="row">
+            <div class="js-hint-socket socket"></div>
+            <div class="js-hint-socket socket"></div>
+          </div>
+          <div class="row">
+            <div class="js-hint-socket socket"></div>
+            <div class="js-hint-socket socket"></div>
+          </div>
+        </div>
+        <div class="hint">
+          <div class="row">
+            <div class="js-hint-socket socket"></div>
+            <div class="js-hint-socket socket"></div>
+          </div>
+          <div class="row">
+            <div class="js-hint-socket socket"></div>
+            <div class="js-hint-socket socket"></div>
+          </div>
+        </div>
+        <div class="hint">
+          <div class="row">
+            <div class="js-hint-socket socket"></div>
+            <div class="js-hint-socket socket"></div>
+          </div>
+          <div class="row">
+            <div class="js-hint-socket socket"></div>
+            <div class="js-hint-socket socket"></div>
+          </div>
+        </div>
+        <div class="hint">
+          <div class="row">
+            <div class="js-hint-socket socket"></div>
+            <div class="js-hint-socket socket"></div>
+          </div>
+          <div class="row">
+            <div class="js-hint-socket socket"></div>
+            <div class="js-hint-socket socket"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   <div id="instructions">
+      <h3>How to play</h3>
+      <p><strong>Goal:</strong> Guess the pattern, in both order and color</p>
+      <p>Insert your guess sequence into the empty sockets</p>
+      <p>Feedback is provided on the right side in the form of black and white pegs.
+        </p><ul>
+          <li>Black peg corresponds to one peg from your color sequence that is both the right color and in the right position</li>
+          <li>White peg corresponds to one peg from your color sequence that is the right color but NOT in the right position</li>
+        </ul>
+      <p></p>
+    </div> -->
+    
+   
+  </div>
+   <div id="options" class="container">
+      <button value="1" id="green" class="option green"></button>
+      <button value="2" id="purple" class="option purple"></button>
+      <button value="3" id="red" class="option red"></button>
+      <button value="4" id="yellow" class="option yellow"></button>
+      <button value="5" id="blue" class="option blue"></button>
+      <button value="6" id="brown" class="option brown"></button>
+      <button id="delete" class="">⇠</button>
+    </div>
+
+  <div id="modalOverlay" class="">
+    <div id="modalMessage"><h2>You failed...</h2> <p>What a shame... Look on the bright side - you weren't even close.</p> <button class="large" id="hideModal">OK</button> <button id="restartGame" class="large primary">Restart</button></div>
+  </div>
+  <script
+      
+   async="" src="./JS Mastermind_files/analytics.js.téléchargement"></script><script src="./JS Mastermind_files/main.js.téléchargement"></script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-58209103-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+
+
+</body></html>
